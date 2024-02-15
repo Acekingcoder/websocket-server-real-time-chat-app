@@ -1,6 +1,9 @@
-const { Server } = require("socket.io");
+const dotenv = require("dotenv");
 
-const io = new Server({ cors: "http://localhost:5173" });
+const { Server } = require("socket.io");
+dotenv.config();
+
+const io = new Server({ cors: process.env.CLIENT_URL });
 
 let onlineUsers = [];
 
